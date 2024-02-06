@@ -1,0 +1,2 @@
+
+        if (std::cin >> option)
