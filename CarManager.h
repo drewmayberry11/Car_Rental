@@ -73,6 +73,18 @@ public:
         file.close();
     }
 
+    Car *getCarByID(size_t id)
+    {
+        for (auto &car : carList)
+        {
+            if (car.getCarID() == id)
+            {
+                return &car;
+            }
+        }
+        return nullptr;
+    }
+
     void displayCar()
     {
         std::cout << "Full Car List:\n";

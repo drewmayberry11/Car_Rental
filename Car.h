@@ -1,3 +1,8 @@
+#ifndef CAR_H
+#define CAR_H
+
+#pragma once
+
 #include <iostream>
 
 class Car
@@ -53,3 +58,5 @@ private:
     std::string category;
     bool isAvailable;
 };
+
+#endif

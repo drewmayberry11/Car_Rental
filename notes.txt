@@ -1,0 +1,17 @@
+Reservation
+
+credit card
+
+Customer:
+    name
+    membership
+    
+    creditc ard
+    history -> linked list
+
+Management system
+    returns
+    rental
+    car inputs
+    
+
