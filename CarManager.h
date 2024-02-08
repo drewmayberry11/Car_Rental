@@ -87,10 +87,10 @@ public:
 
     void displayCar()
     {
-        std::cout << "Full Car List:\n";
+
         for (auto &car : carList)
         {
-            car.displayMakeModel();
+            car.displayCar();
         }
     }
 
@@ -99,6 +99,17 @@ public:
         for (auto &car : carList)
         {
             car.displayCar();
+        }
+    }
+
+    void displayAvailableCars()
+    {
+        for (auto &car : carList)
+        {
+            if (car.getIsAvailable() == true)
+            {
+                car.displayCar();
+            }
         }
     }
 

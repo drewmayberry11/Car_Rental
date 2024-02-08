@@ -68,6 +68,8 @@ public:
 
     void displayAllCustomers()
     {
+        std::cout << std::left << std::setw(5) << "ID:"
+                  << "Name:" << std::endl; // Assuming ID width of 5 matches printCustomer
         for (auto &customer : customerList)
         {
             customer.printCustomer();

@@ -3,7 +3,7 @@
 
 #pragma once
 #include <iostream>
-
+#include <iomanip>
 class Customer
 {
 public:
@@ -18,7 +18,16 @@ public:
 
     void printCustomer()
     {
-        std::cout << firstName << ", " << lastName << std::endl;
+        const int idWidth = 5;    // Adjust based on the maximum expected length of customerID
+        const int nameWidth = 20; // Adjust based on the maximum expected length of names
+
+        // Use std::left to align text to the left
+        std::cout << std::left << std::setw(idWidth) << customerID << std::setw(nameWidth) << (firstName + " " + lastName) << std::endl;
+    }
+
+    void printCustomerForRental()
+    {
+        std::cout << firstName << "  " << lastName << std::endl;
     }
 
 private:

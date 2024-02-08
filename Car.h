@@ -4,6 +4,7 @@
 #pragma once
 
 #include <iostream>
+#include <iomanip>
 
 class Car
 {
@@ -34,17 +35,36 @@ public:
     long int getMileage() const { return mileage; }
     std::string getCategory() const { return category; }
     bool getIsAvailable() const { return isAvailable; }
+    float getPricePerDay() const { return pricePerDay; }
 
     void displayCar()
     {
 
-        std::cout << "ID: " << carID << ", Make: " << make << ", Model: " << model << std::endl;
-        std::cout << "Price per Day: $" << pricePerDay << "In Stock: " << std::boolalpha << isAvailable << std::endl;
+        const int idWidth = 4;     // Width for the car ID
+        const int makeWidth = 12;  // Adjusted width for the car's make
+        const int modelWidth = 12; // Adjusted width for the car's model
+        const int priceWidth = 4;  // Width for the price, including space for "$"
+
+        std::cout << std::left << std::setw(idWidth) << carID
+                  << std::setw(makeWidth) << make
+                  << std::setw(modelWidth) << model
+                  << "$" << std::right << std::setw(priceWidth - 1) << std::fixed << std::setprecision(2) << pricePerDay << std::endl;
     }
 
-    void displayMakeModel()
+    void displayCarForRental()
     {
-        std::cout << make << " " << model << std::endl;
+        // Assuming make, model, and pricePerDay are accessible in this context
+        const int spacing = 4;    // Number of spaces you want before price
+        const int priceWidth = 4; // Width for the price, assuming "$" + price. Adjust as necessary
+
+        // Calculate the total width required for make and model based on your desired output
+        int makeModelWidth = 20; // Example fixed width for make and model together. Adjust based on your data
+
+        // Print make and model
+        std::cout << std::left << std::setw(10) << (make + " " + model);
+
+        // Print the price with a fixed precision of 2 decimal places, preceded by 4 spaces
+        std::cout << std::string(spacing, ' ') << "$" << std::right << std::setw(priceWidth) << std::fixed << std::setprecision(2) << pricePerDay << std::endl;
     }
 
 private:
